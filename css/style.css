@@ -17,11 +17,88 @@ body {
     height: 100vh;
     background-image: linear-gradient(
         to right bottom,
-        rgba(232, 232, 232, 0.3),
-        rgba(191, 191, 191, 0.3)),
+        rgba(232, 232, 232, 0.1),
+        rgba(191, 191, 191, 0.1)),
     url("../img/main.jpg");
 
     background-size: cover;
     background-position: top;
+    position: relative;
+}
+/* 로고 */
+.logo-box {
+    position: absolute;
+    top:40px;
+    left: 40px;
 }
 
+.logo {
+    width: 120px;
+    height: 70px;
+}
+
+.logo:hover {
+    animation: moveInRight 10s ease-out;
+}
+
+.text-box {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.heading-primary {
+    color: #fff;
+    backface-visibility: hidden;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 5s;
+    
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+
+    animation-name: moveInRight;
+    animation-duration: 5s;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
